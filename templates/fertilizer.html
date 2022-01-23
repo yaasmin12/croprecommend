@@ -1,5 +1,22 @@
 {% extends 'layout.html' %} {% block body %}
-
+<div class="navbar"> 
+  <a href="{{url_for('home')}}">Home</a>
+  <a href="#news">News</a>
+  <div class="dropdown">
+    <button class="dropbtn">Menu
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{{url_for('potatto')}}">PredictCropDisease</a>
+       <a href="https://xieproject.herokuapp.com/fertilizer">Fertilizer</a>
+        <a href="https://thingspeak.com/channels/1628276">CropMonitor</a>
+      <a href="https://ali1110.herokuapp.com/predict">PredictWeather</a>
+      <a href="https://cropweather.herokuapp.com/">WeatherForcast</a>
+        
+    </div>
+  </div> 
+</div>
+    
 <style>
    <div>
         <img src="/static/images/cotton palnt banner2.png" class="w3-border w3-padding" alt="Indian AI Production"
