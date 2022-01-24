@@ -1,5 +1,89 @@
 {% extends 'layout.html' %} {% block body %}
+<body>
+ 
+    <header>
+    
+ 
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
 
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+ background-color:green;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+.dropdown-content a {
+  float: none;
+  font-weight: 800;
+  color:rgb(2,0,36);;
+ 
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: red;
+}
+
+.dropdown:hover .dropdown-content {
+  display:RED;
+}
+</style>
+<div class="navbar"> 
+  <a  background-color:#068762 href="http://127.0.0.1:5000/">Home</a>
+  <a href="#news">News</a>
+  <div class="dropdown">
+    <button class="dropbtn">Menu
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://127.0.0.1:5000/potatto">PredictCropDisease</a>
+       <a href="https://xieproject.herokuapp.com/fertilizer">Fertilizer</a>
+        <a href="https://thingspeak.com/channels/1628276">CropMonitor</a>
+      <a href="https://ali1110.herokuapp.com/predict">PredictWeather</a>
+      <a href="https://cropweather.herokuapp.com/">WeatherForcast</a>
+        
+    </div>
+  </div> 
+</div>
+    
+
+   <div>
+        <img src="/static/images/cotton palnt banner2.png" class="w3-border w3-padding" alt="Indian AI Production"
+            style="width:100%">
+    </div>
 <style>
   html body {
     background-color: rgb(206, 206, 228);
