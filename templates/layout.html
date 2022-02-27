@@ -2,16 +2,15 @@
 <html lang="en">
 
 <head>
-	<title>Harvestify - Crop Recommendation</title>
-	
+	<title>{{ title }}</title>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}"/>
 
 	<!-- for-mobile-apps -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
 	<meta name="keywords" content="Agro Harvest Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-	
-	
+
 	<style>
 		html {
 			font-size: 1rem;
@@ -126,16 +125,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- css files -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link href="/static/css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel='stylesheet' type='text/css' />
 	<!-- bootstrap css -->
-	<link href="/static/css/style.css" rel='stylesheet' type='text/css' />
+	<link href="{{ url_for('static', filename='css/style.css') }}" rel='stylesheet' type='text/css' />
 	<!-- custom css -->
-	<link href="/static/css/font-awesome.min.css" rel="stylesheet"><!-- fontawesome css -->
+	<link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet"><!-- fontawesome css -->
 	<!-- //css files -->
-	<!-- <link rel="icon" type="image/png" href="/static/images/favicon.png%3F"> -->
+	<!-- <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png?') }}"> -->
 
 
-	<script type="text/JavaScript" src="/static/scripts/cities.js"></script>
+	<script type="text/JavaScript" src="{{ url_for('static', filename='scripts/cities.js') }}"></script>
 
 
 	<!-- google fonts -->
@@ -144,20 +143,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- //google fonts -->
 
 	<style>
-		  * {
-        background-color:white;
-            margin: 0px;
-            padding: 0px;
-            box-sizing: border-box;
-        }
-
-        .border img {
-            border-radius: 15px;
-            border: 2px solid white;
-        }
-        
 		header {
-			background-color: #068762;
+			background-color: rgba(30, 30, 30, 1);
 			margin-top: 0rem;
 			display: block;
 
@@ -168,246 +155,74 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 
 	<!-- Navigation -->
-	
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" style="background-color: #1C00ff00;">
+		<div class="container">
+			<a class="navbar-brand" href="{{ url_for('home') }}">
+				<img src="{{ url_for('static', filename='images/logo.jpg') }}" style="width: 90px; height: 55px" alt="">
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="{{ url_for('home') }}">Home
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('crop_recommend') }}">Crop</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('fertilizer_recommendation') }}">Fertilizer</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('disease_prediction') }}">Disease</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
 
-	
-<body>
- 
-    <header>
-    
- 
- <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
 
 
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-}
-
-.navbar a {
-  float: left;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-.dropdown {
-  float: left;
-  overflow: hidden;
- background-color:#068762;
-}
-
-.dropdown .dropbtn {
-  font-size: 16px;  
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
-
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
-}
-.dropdown-content a {
-  float: none;
-  font-weight: 800;
-  color:white;
- background-color:#068762;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {
-  background-color: red;
-}
-
-.dropdown:hover .dropdown-content {
-  display:RED;
-}
-</style>
-<div class="navbar"> 
-  <a  background-color:#068762 href="https://xieproject1.herokuapp.com">Home</a>
-  <a href="#news">News</a>
-  <div class="dropdown">
-    <button class="dropbtn">Menu
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="http://127.0.0.1:5000/potatto">PredictCropDisease</a>
-       <a href="https://xieproject.herokuapp.com/fertilizer">Fertilizer</a>
-        <a href="https://thingspeak.com/channels/1628276">CropMonitor</a>
-          <a href="https://xieproject1.herokuapp.com/predict">Predict Weather</a>
-      <a href="https://xieproject2.herokuapp.com/">WeatherForcast</a>
-        
-    </div>
-  </div> 
-</div>
-    
-
-   <div>
-        <img src="/static/images/cotton palnt banner2.png" class="w3-border w3-padding" alt="Indian AI Production"
-            style="width:100%">
-    </div>
-<style>
-  html body {
-    background-color: rgb(206, 206, 228);
-  }
-</style>
-<!--Form Section-->
-<br /><br />
-<h2 style="text-align: center; margin: 0px; color: black">
-  <b>Find out the most suitable crop to grow in your farm</b>
-</h2>
-<br />
-
-<div
-  style="
-    width: 350px;
-    height: 50rem;
-    margin: 0px auto;
-    color: black;
-    border-radius: 25px;
-    padding: 10px 10px;
-  "
->
-  <form method="POST" action="/crop-predict">
-    <div class="form-group">
-      <label for="Nitrogen" style="font-size: 17px"><b>Nitrogen</b></label>
-      <input
-        type="number"
-        class="form-control"
-        id="Nitrogen"
-        name="nitrogen"
-        placeholder="Enter the value (example:50)"
-        style="font-weight: bold"
-        required
-      />
-    </div>
-    <div class="form-group">
-      <label for="Phosphorous" style="font-size: 17px"
-        ><b>Phosphorous</b></label
-      >
-      <input
-        type="number"
-        class="form-control"
-        id="Phosphorous"
-        name="phosphorous"
-        placeholder="Enter the value (example:50)"
-        style="font-weight: bold"
-        required
-      />
-    </div>
-
-    <div class="form-group">
-      <label for="Pottasium" style="font-size: 17px"><b>Pottasium</b></label>
-      <input
-        type="number"
-        class="form-control"
-        id="Pottasium"
-        name="pottasium"
-        placeholder="Enter the value (example:50)"
-        style="font-weight: bold"
-        required
-      />
-    </div>
-    <div class="form-group">
-      <label for="ph" style="font-size: 17px"><b>ph level</b></label>
-      <input
-        type="number"
-        step="0.01"
-        class="form-control"
-        id="ph"
-        name="ph"
-        placeholder="Enter the value"
-        style="font-weight: bold"
-        required
-      />
-    </div>
-    <div class="form-group">
-      <label for="Rainfall" style="font-size: 17px"
-        ><b>Rainfall (in mm)</b></label
-      >
-      <input
-        type="number"
-        step="0.01"
-        class="form-control"
-        id="Rainfall"
-        name="rainfall"
-        placeholder="Enter the value"
-        style="font-weight: bold"
-        required
-      />
-    </div>
-    <div class="form-group">
-      <label for="State" style="font-size: 17px"><b>State</b></label>
-      <select
-        onchange="print_city('state', this.selectedIndex);"
-        id="sts"
-        name="stt"
-        class="form-control"
-        style="font-weight: bold; color: black"
-        required
-      ></select>
-      <br />
-      <label for="City" style="font-size: 17px"><b>City</b></label>
-      <select
-        id="state"
-        class="form-control"
-        name="city"
-        style="font-weight: bold; color: black"
-        required
-      ></select>
-      <script language="javascript">
-        print_state("sts");
-      </script>
-    </div>
-
-    <div class="d-flex justify-content-center">
-      <button
-        type="submit"
-        class="btn btn-info"
-        style="
-          color: black;
-          font-weight: bold;
-          width: 130px;
-          height: 50px;
-          border-radius: 12px;
-          font-size: 21px;
-        "
-      >
-        Predict
-      </button>
-    </div>
-  </form>
-</div>
-
-<!-- Form section -->
-
-
+	{% block body %} {% endblock %}
 
 	<!-- footer -->
-	
-	
-                                
-		
-        </div>
-         <div class="container Content-h5">
- 
-            <h1 style="font-size: 1rem;" class="text-center my-3 contents">
-            
-    </section>
+	<footer class="text-center py-5">
+		<div class="container py-md-3">
+			<!-- logo -->
+			<h2 class="logo2 text-center">
+				<a href="{{ url_for('home') }}">
+					Harvestify
+				</a>
+			</h2>
+			<!-- //logo -->
+			<!-- address -->
+			<div class="contact-left-footer mt-4">
+
+
+
+
+
+				<!-- <a href="community.html">Community</a> -->
+				</p>
+			</div>
+			<div class="w3l-copy text-center">
+				<p class="text-da">An Environmental Intelligence Startup<br> </p>
+			</div>
+			<p class="homelogo">
+			<p>Made with ❤️ by Atharva</p>
+			<p>&copy; Copyright 2022 Atharva Ingle</p>
+			
+		</div>
+	</footer>
 	<!-- //footer -->
 
 	<!-- move top icon -->
+	<a href="#home" class="move-top text-center"></a>
 	<!-- //move top icon -->
 </body>
 
