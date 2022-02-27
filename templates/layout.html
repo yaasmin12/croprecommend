@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Harvestify - Crop Recommendation</title>
+	
+
+	<!-- for-mobile-apps -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="Agro Harvest Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	
+	
+	<style>
+		html {
+			font-size: 1rem;
+		}
+
+		@media (min-width: 576px) {
+			html {
+				font-size: 1.25rem;
+			}
+		}
+
+		@media (min-width: 768px) {
+			html {
+				font-size: 1.5rem;
+			}
+		}
+
+		@media (min-width: 992px) {
+			html {
+				font-size: 1.75rem;
+			}
+		}
+
+		@media (min-width: 1200px) {
+			html {
+				font-size: 2rem;
+			}
+
+			html {
+				font-size: 1rem;
+			}
+
+			h1 {
+				font-size: 1.2rem;
+			}
+
+			h2 {
+				font-size: 1.1rem;
+			}
+
+			@media (min-width: 768px) {
+				html {
+					font-size: 1.1rem;
+				}
+
+				h1 {
+					font-size: 1.3rem;
+				}
+
+				h2 {
+					font-size: 1.2rem;
+				}
+			}
+
+			@media (min-width: 991px) {
+				html {
+					font-size: 1.2rem;
+				}
+
+				h1 {
+					font-size: 1.5rem;
+				}
+
+				h2 {
+					font-size: 1.4rem;
+				}
+			}
+
+			@media (min-width: 1200px) {
+				html {
+					font-size: 1.2rem;
+				}
+
+				h1 {
+					font-size: 1.7rem;
+				}
+
+				h2 {
+					font-size: 1.6rem;
+				}
+			}
+
+		}
+	</style>
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+
+	</script>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	</body>
+	<!-- css files -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="/static/css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<!-- bootstrap css -->
+	<link href="/static/css/style.css" rel='stylesheet' type='text/css' />
+	<!-- custom css -->
+	<link href="/static/css/font-awesome.min.css" rel="stylesheet"><!-- fontawesome css -->
+	<!-- //css files -->
+	<!-- <link rel="icon" type="image/png" href="/static/images/favicon.png%3F"> -->
+
+
+	<script type="text/JavaScript" src="/static/scripts/cities.js"></script>
+
+
+	<!-- google fonts -->
+	<link href="//fonts.googleapis.com/css?family=Thasadith:400,400i,700,700i&amp;subset=latin-ext,thai,vietnamese"
+		rel="stylesheet">
+	<!-- //google fonts -->
+
+	<style>
+		  * {
+        background-color:white;
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .border img {
+            border-radius: 15px;
+            border: 2px solid white;
+        }
+        
+		header {
+			background-color: #068762;
+			margin-top: 0rem;
+			display: block;
+
+		}
+	</style>
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	
+
+
+	
+<body>
+ 
+    <header>
+    
+ 
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+ background-color:#068762;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+.dropdown-content a {
+  float: none;
+  font-weight: 800;
+  color:white;
+ background-color:#068762;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: red;
+}
+
+.dropdown:hover .dropdown-content {
+  display:RED;
+}
+</style>
+<div class="navbar"> 
+  <a  background-color:#068762 href="https://xieproject1.herokuapp.com">Home</a>
+  <a href="#news">News</a>
+  <div class="dropdown">
+    <button class="dropbtn">Menu
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://127.0.0.1:5000/potatto">PredictCropDisease</a>
+       <a href="https://xieproject.herokuapp.com/fertilizer">Fertilizer</a>
+        <a href="https://thingspeak.com/channels/1628276">CropMonitor</a>
+          <a href="https://xieproject1.herokuapp.com/predict">Predict Weather</a>
+      <a href="https://xieproject2.herokuapp.com/">WeatherForcast</a>
+        
+    </div>
+  </div> 
+</div>
+    
+
+   <div>
+        <img src="/static/images/cotton palnt banner2.png" class="w3-border w3-padding" alt="Indian AI Production"
+            style="width:100%">
+    </div>
+<style>
+  html body {
+    background-color: rgb(206, 206, 228);
+  }
+</style>
+<!--Form Section-->
+<br /><br />
+<h2 style="text-align: center; margin: 0px; color: black">
+  <b>Find out the most suitable crop to grow in your farm</b>
+</h2>
+<br />
+
+<div
+  style="
+    width: 350px;
+    height: 50rem;
+    margin: 0px auto;
+    color: black;
+    border-radius: 25px;
+    padding: 10px 10px;
+  "
+>
+  <form method="POST" action="/crop-predict">
+    <div class="form-group">
+      <label for="Nitrogen" style="font-size: 17px"><b>Nitrogen</b></label>
+      <input
+        type="number"
+        class="form-control"
+        id="Nitrogen"
+        name="nitrogen"
+        placeholder="Enter the value (example:50)"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="Phosphorous" style="font-size: 17px"
+        ><b>Phosphorous</b></label
+      >
+      <input
+        type="number"
+        class="form-control"
+        id="Phosphorous"
+        name="phosphorous"
+        placeholder="Enter the value (example:50)"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="Pottasium" style="font-size: 17px"><b>Pottasium</b></label>
+      <input
+        type="number"
+        class="form-control"
+        id="Pottasium"
+        name="pottasium"
+        placeholder="Enter the value (example:50)"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="ph" style="font-size: 17px"><b>ph level</b></label>
+      <input
+        type="number"
+        step="0.01"
+        class="form-control"
+        id="ph"
+        name="ph"
+        placeholder="Enter the value"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="Rainfall" style="font-size: 17px"
+        ><b>Rainfall (in mm)</b></label
+      >
+      <input
+        type="number"
+        step="0.01"
+        class="form-control"
+        id="Rainfall"
+        name="rainfall"
+        placeholder="Enter the value"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="State" style="font-size: 17px"><b>State</b></label>
+      <select
+        onchange="print_city('state', this.selectedIndex);"
+        id="sts"
+        name="stt"
+        class="form-control"
+        style="font-weight: bold; color: black"
+        required
+      ></select>
+      <br />
+      <label for="City" style="font-size: 17px"><b>City</b></label>
+      <select
+        id="state"
+        class="form-control"
+        name="city"
+        style="font-weight: bold; color: black"
+        required
+      ></select>
+      <script language="javascript">
+        print_state("sts");
+      </script>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <button
+        type="submit"
+        class="btn btn-info"
+        style="
+          color: black;
+          font-weight: bold;
+          width: 130px;
+          height: 50px;
+          border-radius: 12px;
+          font-size: 21px;
+        "
+      >
+        Predict
+      </button>
+    </div>
+  </form>
+</div>
+
+<!-- Form section -->
+
+
+
+	<!-- footer -->
+	
+	
+                                
+		
+        </div>
+         <div class="container Content-h5">
+ 
+            <h1 style="font-size: 1rem;" class="text-center my-3 contents">
+            
+    </section>
+	<!-- //footer -->
+
+	<!-- move top icon -->
+	<!-- //move top icon -->
+</body>
+
+</html>
