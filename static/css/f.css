@@ -15,7 +15,7 @@
 
 .u-section-1 .u-form-1 {
   height: 684px;
-  margin: 10px 659px 0 89px;
+  margin: 100px 659px 0 89px;
 }
 
 .u-section-1 .u-form-group-3 {
@@ -44,9 +44,9 @@
 }
 
 .u-section-1 .u-image-1 {
-  width:509px;
-  height: 500px;
-  margin: -650px 0px 90px auto;
+  width:609px;
+  height:600px;
+  margin: -750px 200px 100px auto;
 }
 @media (max-width: 1199px) {
   .u-section-1 .u-sheet-1 {
